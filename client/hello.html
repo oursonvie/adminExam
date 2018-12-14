@@ -1,3 +1,30 @@
 <template name="hello">
-  <label for="upload">Parse File: </label><input type="file" id="input" />
+
+  <div class="card">
+    <div class="card-body">
+
+
+      <div class="btn-group" role="group" aria-label="Basic example">
+
+        {{#if contentTypeStatus}}
+          <button type="button" class="btn btn-danger btn-contentType">题目图片</button>
+        {{else}}
+          <button type="button" class="btn btn-secondary btn-contentType">题目图片</button>
+        {{/if}}
+
+        {{#if choiceTypeStatus}}
+          <button type="button" class="btn btn-danger btn-choiceType">回答图片</button>
+        {{else}}
+          <button type="button" class="btn btn-secondary btn-choiceType">回答图片</button>
+        {{/if}}
+
+
+      </div>
+
+      <label for="upload">Parse File: </label><input type="file" id="input" />
+
+    </div>
+  </div>
+
+
 </template>

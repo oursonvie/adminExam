@@ -1,4 +1,24 @@
+Template.hello.onCreated = function(){
+   Session.set('contentType', false)
+   Session.set('choiceType', false)
+};
+
+Template.hello.helpers({
+  contentTypeStatus: function() {
+    return Session.get('contentType')
+  },
+  choiceTypeStatus: function() {
+    return Session.get('choiceType')
+  }
+})
+
 Template.hello.events({
+  'click .btn-contentType': function() {
+    Session.set('contentType', !(Session.get('contentType')) )
+  },
+  'click .btn-choiceType': function() {
+    Session.set('choiceType', !(Session.get('choiceType')) )
+  },
   'change input' (event) {
 
     var filesList = event.currentTarget.files;
@@ -18,6 +38,13 @@ Template.hello.events({
           if (papaObject && papaObject.errors.length == 0) {
 
             _.forEach(papaObject.data, function(question) {
+
+              // set default contentType to string
+              question.contentType = ( Session.get('contentType') ? 'image' : 'string' )
+
+              // set default choiceType to string
+              question.choiceType = ( Session.get('choiceType') ? 'image' : 'string' )
+
               PromiseMeteorCall('insertQuestion', question, categoryName)
               .then(res => {
                 console.log(res)

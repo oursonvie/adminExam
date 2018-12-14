@@ -27,9 +27,35 @@ Questions.attachSchema(new SimpleSchema({
     type: String,
     label: "题目内容",
   },
+  contentType: {
+    type: String,
+    label: "题目内容类型",
+    autoValue: function() {
+      if (this.isInsert) {
+        if ( !this.value ) {
+          return 'string'
+        } else {
+          return this.value
+        }
+      }
+    }
+  },
   choice: {
     type: String,
     label: "可选项",
+  },
+  choiceType: {
+    type: String,
+    label: "可选项类型",
+    autoValue: function() {
+      if (this.isInsert) {
+        if ( !this.value ) {
+          return 'string'
+        } else {
+          return this.value
+        }
+      }
+    }
   },
   answer: {
     type: String,

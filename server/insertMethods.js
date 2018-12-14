@@ -8,6 +8,10 @@ Meteor.methods({
     newObj.answer = question.标准答案
     newObj.difficulty = question.题目难度
     newObj.score = question.题目分数
+
+    newObj.contentType = question.contentType
+    newObj.choiceType = question.choiceType
+
     newObj.category = category
 
     result = Questions.insert(newObj)
