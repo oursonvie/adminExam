@@ -1,0 +1,19 @@
+<template name="status">
+
+  <div class="card">
+    <div class="card-body">
+
+      <button class="btn btn-primary btn-refresh">Refresh</button>
+
+      {{#if statusLog}}
+
+        {{#each statusLog}}
+          <p>{{name}} - {{count}}</p>
+        {{/each}}
+
+      {{/if}}
+
+    </div>
+  </div>
+
+</template>
