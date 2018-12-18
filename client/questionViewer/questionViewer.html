@@ -1,9 +1,19 @@
 <template name="questionViewer">
 
   {{#if questions}}
+
     {{#each questions}}
-      {{content}}
+
+      {{#if $eq contentType 'image'}}
+        {{> imageQuestion}}
+      {{/if}}
+
+      {{#if $eq contentType 'string'}}
+        {{content}}
+      {{/if}}
+
     {{/each}}
+
   {{else}}
     <p>没有显示题目</p>
   {{/if}}
