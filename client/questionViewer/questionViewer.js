@@ -13,9 +13,3 @@ Template.questionViewer.helpers({
      return Questions.find()
   }
 });
-
-Template.questionViewer.events({
-  "click #foo": function(event, template){
-
-  }
-});
