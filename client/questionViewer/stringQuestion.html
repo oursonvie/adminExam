@@ -1,0 +1,20 @@
+<template name="stingQuestion">
+  <p>{{content}}</p>
+
+  {{#each answerList}}
+
+    <div class="form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" type="radio" name="stingRadioChoice" id="radioChoice" value="{{choice}}">
+        {{choice}}: {{answer}}
+      </label>
+    </div>
+
+  {{/each}}
+
+
+  <button type="button" class="btn btn-success btn-string-success btn-sm">提交</button>
+  <button type="button" class="btn btn-danger btn-string-danger btn-sm">重置</button>
+
+
+</template>

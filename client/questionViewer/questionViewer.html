@@ -5,11 +5,13 @@
     {{#each questions}}
 
       {{#if $eq contentType 'image'}}
+        <p>questionType:image</p>
         {{> imageQuestion}}
       {{/if}}
 
       {{#if $eq contentType 'string'}}
-        {{content}}
+        <p>questionType:string</p>
+        {{> stingQuestion}}
       {{/if}}
 
     {{/each}}

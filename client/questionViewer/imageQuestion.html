@@ -1,13 +1,37 @@
 <template name="imageQuestion">
   <img src="/image/{{content}}.png" class="img-fluid" alt="Responsive image">
 
-  <div class="input-group">
-    <div class="input-group-prepend">
-      <div class="input-group-text">
-        <input type="radio" aria-label="Radio button for following text input">
-      </div>
-    </div>
-    <p>A</p>
+  <div class="form-check">
+    <label class="form-check-label">
+      <input class="form-check-input" type="radio" name="imageRadioChoice" id="radioChoice" value="A">
+      A
+    </label>
   </div>
+
+  <div class="form-check">
+    <label class="form-check-label">
+      <input class="form-check-input" type="radio" name="imageRadioChoice" id="radioChoice" value="B">
+      B
+    </label>
+  </div>
+
+  <div class="form-check">
+    <label class="form-check-label">
+      <input class="form-check-input" type="radio" name="imageRadioChoice" id="radioChoice" value="C">
+      C
+    </label>
+  </div>
+
+  <div class="form-check">
+    <label class="form-check-label">
+      <input class="form-check-input" type="radio" name="imageRadioChoice" id="radioChoice" value="D">
+      D
+    </label>
+  </div>
+
+
+  <button type="button" class="btn btn-success btn-image-success btn-sm">提交</button>
+  <button type="button" class="btn btn-danger btn-image-danger btn-sm">重置</button>
+
 
 </template>
