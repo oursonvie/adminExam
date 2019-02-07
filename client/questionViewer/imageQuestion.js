@@ -30,6 +30,6 @@ Template.questionViewer.events({
 
   },
   'click .btn-image-danger': function() {
-    $('input[name=radioChoice]').attr('checked',false)
+    $('input[name=imageRadioChoice]').attr('checked',false)
   }
 })
