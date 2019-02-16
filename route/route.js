@@ -18,3 +18,10 @@ FlowRouter.route('/exammixer', {
         BlazeLayout.render('MainLayout', {main: 'examMixer'});
     }
 });
+
+FlowRouter.route('/viewexam/:id', {
+   name: 'examviwer',
+    action() {
+        BlazeLayout.render('MainLayout', {main: 'examViewer'});
+    }
+});
