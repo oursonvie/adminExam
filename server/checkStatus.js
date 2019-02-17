@@ -14,6 +14,17 @@ Meteor.methods({
        item.name = category
        item.count = Questions.find({category:category}).count()
        resultArray.push(item)
+
+       // upsert to questionList
+       QuestionList.upsert(
+         {name: category},
+         {
+           $set:{
+             number:  item.count
+           }
+         }
+       )
+
      })
 
      return resultArray

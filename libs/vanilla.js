@@ -1,8 +1,17 @@
 examSourceList = () => {
-  theList = [ "2019年春专升本大学语文入学考试", "2019年春专升本高等数学入学考试" ]
-  result = []
-  _.forEach(theList, function(source) {
-    result.push({'label':source, 'value':source})
-  })
-  return result
+
+  try {
+    sourceArray = QuestionList.find({},{fields:{name:1}}).fetch()
+
+    result = []
+    _.forEach(sourceArray, function(source) {
+      result.push({'label':source.name, 'value':source.name})
+    })
+
+    return result
+
+  } catch(err) {
+    console.log(err)
+  }
+
 }

@@ -2,6 +2,7 @@ Template.examMixer.onCreated(function() {
   var self = this;
   self.autorun(function() {
     self.subscribe('examnations')
+    self.subscribe('questionList')
   })
 })
 
