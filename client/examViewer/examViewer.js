@@ -5,11 +5,5 @@ Template.examViewer.onCreated(function() {
   self.autorun(function() {
     self.subscribe('examID', examId)
   })
+
 })
-
-
-Template.examViewer.helpers({
-  questions: function(){
-     return Questions.find()
-  }
-});
