@@ -7,10 +7,18 @@ Template.stingQuestionViewer.helpers({
     choice = this.choice.split(';')
     choiceList = []
     for ( i=0; i<choice.length; i++) {
-      obj = {choice:aList[i].toUpperCase(), answer:choice[i]}
+      obj = {
+        choice:aList[i].toUpperCase(),
+        answer:choice[i],
+        id:this._id
+      }
       choiceList.push(obj)
     }
     return choiceList
+  },
+  indexNumber: function() {
+    answerSheet = Session.get('answerSheet')
+    return answerSheet.filter(obj => {return obj.id === this._id})[0].order
   }
 });
 

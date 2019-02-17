@@ -1,5 +1,6 @@
 Template.examClient.onCreated(function() {
   Session.set('answerSheet', false)
+  Session.set('markingResult', false)
 
 })
 

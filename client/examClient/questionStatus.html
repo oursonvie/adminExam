@@ -1,23 +1,52 @@
 <template name="questionStatus">
 
     <div class="card top-right-card">
+
       <div class="card-body">
-        <h5 class="card-title">答题情况</h5>
+
+        {{#if markingResult}}
+          <h5 class="card-title">总分:
+            {{#if markingResult.totalmark}}
+              {{markingResult.totalmark}}
+            {{else}}
+              0
+            {{/if}}
+          </h5>
+        {{else}}
+          <h5 class="card-title">答题情况:</h5>
+        {{/if}}
 
         <div class="row">
 
-          {{#each answerArr}}
-            <div class="col-3">
-              <p class="card-text">{{order}}: {{answer}}</p>
-            </div>
-          {{/each}}
+          {{#if markingResult}}
+
+            {{#each markingResult.result}}
+              <div class="col-3">
+                {{#if ifCorrect}}
+                  <p class="card-text">{{order}}: {{answer}} <i class="fa fa-check-circle" style="color:green"></i> </p>
+                {{else}}
+                  <p class="card-text">{{order}}: {{answer}} <i class="fa fa-times-circle" style="color:red"></i> {{correctAnswer}}</p>
+
+                {{/if}}
+              </div>
+            {{/each}}
+
+          {{else}}
+
+            {{#each answerArr}}
+              <div class="col-3">
+                <p class="card-text">{{order}}: {{answer}}</p>
+              </div>
+            {{/each}}
+
+          {{/if}}
+
+
 
         </div>
 
-
-
-
       </div>
+
     </div>
 
 </template>

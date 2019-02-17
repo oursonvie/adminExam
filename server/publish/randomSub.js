@@ -1,6 +1,6 @@
 // this methods subscribe to random questions according to infor in exam
 Meteor.publish("examID", function(examId){
-  console.log(examId)
+  // console.log(examId)
   // return Examnations.find()
 
   // get exam content
@@ -44,8 +44,8 @@ Meteor.publish("examID", function(examId){
     subArr = subArr.concat(question.categoryArr)
   })
 
-  console.log(subArr)
-  console.log(subArr.length)
+  // console.log(subArr)
+  // console.log(subArr.length)
 
   return Questions.find( { _id: {$in:subArr} }, {sort:{category:1}} )
 
