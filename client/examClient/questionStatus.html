@@ -1,0 +1,23 @@
+<template name="questionStatus">
+
+    <div class="card top-right-card">
+      <div class="card-body">
+        <h5 class="card-title">答题情况</h5>
+
+        <div class="row">
+
+          {{#each answerArr}}
+            <div class="col-3">
+              <p class="card-text">{{order}}: {{answer}}</p>
+            </div>
+          {{/each}}
+
+        </div>
+
+
+
+
+      </div>
+    </div>
+
+</template>

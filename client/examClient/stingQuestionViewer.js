@@ -4,14 +4,10 @@ Template.stingQuestionViewer.helpers({
   },
   answerList: function() {
     aList="abcdefghijklmnopqrstuvwxyz"
-    choice = Questions.findOne().choice.split(';')
+    choice = this.choice.split(';')
     choiceList = []
     for ( i=0; i<choice.length; i++) {
-      obj = {
-        choice:aList[i].toUpperCase(),
-        answer:choice[i],
-        id: this._id
-      }
+      obj = {choice:aList[i].toUpperCase(), answer:choice[i]}
       choiceList.push(obj)
     }
     return choiceList
