@@ -1,4 +1,4 @@
-Template.stingQuestionViewer.helpers({
+Template.examQuestionViewer.helpers({
   questions: function(){
      return Questions.find()
   },
@@ -18,11 +18,15 @@ Template.stingQuestionViewer.helpers({
   },
   indexNumber: function() {
     answerSheet = Session.get('answerSheet')
-    return answerSheet.filter(obj => {return obj.id === this._id})[0].order
+
+    if ( answerSheet.filter(obj => {return obj.id === this._id})[0] && answerSheet.filter(obj => {return obj.id === this._id})[0].order) {
+      return answerSheet.filter(obj => {return obj.id === this._id})[0].order
+    }
+
   }
 });
 
-Template.stingQuestionViewer.events({
+Template.examQuestionViewer.events({
   'click .form-check-input': function(template) {
     choice = template.target.value
     // console.log(choice)

@@ -6,15 +6,9 @@
 
     {{#each questions}}
 
-      {{#if $eq contentType 'image'}}
-        {{> imageQuestionViewer}}
-      {{/if}}
-
-      {{#if $eq contentType 'string'}}
-        {{> stingQuestionViewer}}
-      {{/if}}
-
-      <p></p>
+      {{> examQuestionViewer}}
+      
+      <br />
 
     {{/each}}
 
