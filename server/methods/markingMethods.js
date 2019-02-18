@@ -1,5 +1,5 @@
 Meteor.methods({
-  submitAnswers:function(answersSheet){
+  submitAnswers:function(answersSheet, examId){
     // console.log(answersSheet)
 
     // init marking
@@ -21,9 +21,15 @@ Meteor.methods({
     })
 
     returnObj = {
+      examName: Examnations.findOne({_id:examId}).name,
       totalmark:totalMark,
-      result:result
+      result:result,
+      createdAt: new Date
     }
+
+    result = SubmittedAnswers.insert(returnObj)
+
+    console.log(`[Submitted] id: ${result}, mark: ${returnObj.totalmark}`)
 
     return returnObj
 
